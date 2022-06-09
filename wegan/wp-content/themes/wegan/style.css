@@ -1,0 +1,299 @@
+/*
+Theme Name: Wegan
+Author: Davide Longo
+Description: Starter blank theme for wordpress
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Font Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+
+/* Variables */
+:root {
+  --dark: #121317;
+  --light: #f7f7f7;
+  --green: #7c8f73;
+  --green-darker: hsl(101, 11%, 41%);
+  --primary: var(--green);
+  --hover: var(--green-darker);
+}
+
+/* 
+ * Default theme styles 
+ */
+body {
+  line-height: 1.8;
+  background-color: var(--light);
+  font-family: "Poppins", sans-serif;
+  color: var(--dark);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.8 !important;
+}
+
+h2 {
+  margin: 3rem 0;
+  color: var(--primary);
+}
+
+a,
+a:hover {
+  color: var(--primary);
+}
+
+a.custom-logo-link img {
+  max-width: 100px;
+  height: auto;
+}
+
+.wrapper {
+  padding-top: 5rem;
+}
+
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+
+.bg-light {
+  background-color: var(--light) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-light,
+.navbar-dark {
+  color: var(--light) !important;
+}
+
+.text-dark,
+.navbar-light {
+  color: var(--dark) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.btn {
+  color: var(--light);
+}
+
+.btn:hover {
+  color: var(--light);
+}
+
+.btn-custom-primary {
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-custom-primary:hover {
+  background-color: var(--hover);
+  border-color: var(--hover);
+}
+
+.btn-secondary {
+  background: none;
+  border: 2px solid var(--light);
+  color: var(--light);
+}
+
+.btn-secondary:hover {
+  background-color: #f7f7f730;
+  border-color: var(--light);
+}
+
+.wpcf7 {
+  max-width: 30rem;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+i.fab {
+  font-size: 1.5rem;
+}
+
+i.fab:hover {
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* 
+* Navbar
+*/
+nav {
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul {
+  align-items: start;
+}
+
+.nav-link {
+  text-transform: uppercase;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-brand img {
+  max-width: 100px;
+}
+
+/* 
+* Homepage
+*/
+
+/* hero section */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000070;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 60rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+/* reviews section */
+.reviews-content .card {
+  position: relative;
+  border-bottom: 4px solid var(--primary);
+}
+
+.reviews-content .card::before {
+  content: "\f10d";
+  font-size: 2rem;
+  position: absolute;
+  top: -2rem;
+  font-family: "FontAwesome";
+  color: var(--primary);
+  left: 1rem;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.reviews-content .col-xl-3 {
+  display: flex;
+  align-items: center;
+}
+
+/* about us section */
+.about-content {
+  max-width: 60rem;
+}
+
+.about-content h2 {
+  color: var(--light) !important;
+}
+
+.grid-picture {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 50vh;
+  width: 100%;
+  height: 100%;
+}
+
+/* contacts section */
+iframe {
+  min-height: 20rem;
+}
+
+/*
+* Blog
+*/
+
+.blog-hero {
+  position: relative;
+  min-height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.blog-hero h2 {
+  color: var(--light) !important;
+  z-index: 2;
+}
+
+.blog-hero:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #00000070;
+}
+
+.blog-content {
+  max-width: 60rem;
+}
+
+/*
+* Media Queries
+*/
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem !important;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .swap {
+    order: 2;
+  }
+}
