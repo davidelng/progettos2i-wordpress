@@ -1,17 +1,31 @@
 <?php
-/**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
 
 /**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
+ * Template Name: Blog
  */
-define( 'WP_USE_THEMES', true );
 
-/** Loads the WordPress Environment and Template */
-require __DIR__ . '/wp-blog-header.php';
+get_header();
+?>
+
+<section class="blog-hero text-light p-3 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/single-dish.jpg')">
+    <h2>Il nostro blog, dove condividiamo con voi ogni nostra crescita</h2>
+</section>
+<section class="container-fluid blog-content py-5 px-2 blog-content">
+    <div class="row">
+        <div class="col px-5">
+            <?php
+            if (have_posts()) {
+                while (have_posts()) {
+                    the_post();
+                    get_template_part('content');
+                }
+            }
+            ?>
+
+        </div>
+    </div>
+</section>
+
+
+<?php
+get_footer();
